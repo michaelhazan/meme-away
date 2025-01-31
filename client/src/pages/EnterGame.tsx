@@ -1,5 +1,5 @@
 const EnterGame = () => {
-  return <div>this is the enter page page</div>;
+  return <div>enter game</div>;
 };
 
 export default EnterGame;
