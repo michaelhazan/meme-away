@@ -8,7 +8,12 @@ import tseslint from 'typescript-eslint';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+  {
+    files: ['**/*.{ts,tsx}'],
+  },
+  {
+    ignores: ['**/node_modules/**', '**/dist/**', '*.js', '*.mjs', '*.cjs'],
+  },
   { languageOptions: { globals: globals.browser } },
   {
     plugins: { prettier: prettierPlugin },
