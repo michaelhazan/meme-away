@@ -6,7 +6,6 @@ import { Header } from './Header';
 export const Layout: React.FC = () => {
   return (
     <div>
-      layout
       <Header />
       <Outlet />
     </div>
