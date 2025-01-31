@@ -1,18 +1,13 @@
 name: CI - Quality Assurance
 on: push
 jobs:
-  format:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
       - run: pnpm install
+      - run: pnpm knip
       - run: pnpm format:check
-
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
-      - run: pnpm install
+      - run: pnpm spell:check
       - run: pnpm build
