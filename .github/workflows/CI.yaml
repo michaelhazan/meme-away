@@ -1,0 +1,16 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
+      - run: pnpm install
+      - run: pnpm format:check
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
+      - run: pnpm install
+      - run: turbo build
