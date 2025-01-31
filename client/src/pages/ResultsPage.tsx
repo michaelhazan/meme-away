@@ -1,5 +1,3 @@
-const ResultsPage = () => {
+export const ResultsPage = () => {
   return <div>ResultsPage</div>;
 };
-
-export default ResultsPage;
