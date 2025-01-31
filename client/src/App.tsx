@@ -2,7 +2,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
 
 import { Layout } from './components/Layout';
-import { EnterUsername } from './pages/EnterUsername';
 import { NotMobile } from './pages/NotMobile';
 import { EnterGame } from './pages/EnterGame';
 import { GameRoom } from './pages/GameRoom';
@@ -14,31 +13,24 @@ import { NotFoundPage } from './pages/NotFoundPage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
     element: <Layout />,
     children: [
       ...(isMobile
         ? [
             {
-              path: 'enterusername',
-              element: <EnterUsername />,
+              path: '/',
+              element: <EnterGame />,
             },
             {
-              path: 'entergame',
-              element: <EnterGame />,
+              path: 'game/:roomId',
+              element: <GameRoom />,
               children: [
-                {
-                  path: 'game/:roomId',
-                  element: <GameRoom />,
-                  children: [
-                    { path: 'create', element: <MemeCreation /> },
-                    { path: 'vote', element: <VotingStage /> },
-                    { path: 'results', element: <ResultsPage /> },
-                  ],
-                },
-                { path: 'leaderboard', element: <LeaderBoard /> },
+                { path: 'create', element: <MemeCreation /> },
+                { path: 'vote', element: <VotingStage /> },
+                { path: 'results', element: <ResultsPage /> },
               ],
             },
+            { path: 'leaderboard', element: <LeaderBoard /> },
           ]
         : [
             {
