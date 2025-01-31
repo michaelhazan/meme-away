@@ -2,7 +2,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-const Layout: React.FC = () => {
+export const Layout: React.FC = () => {
   return (
     <div>
       layout
@@ -10,5 +10,3 @@ const Layout: React.FC = () => {
     </div>
   );
 };
-
-export default Layout;
