@@ -6,7 +6,8 @@
     "lint": "eslint .",
     "format:write": "prettier --write . & eslint . --fix",
     "format:check": "prettier --check . & eslint .",
-    "knip": "knip"
+    "knip": "knip",
+    "build": "turbo run build"
   },
   "keywords": [],
   "author": "Michael Hazan, RivkaYo, RamAvni",

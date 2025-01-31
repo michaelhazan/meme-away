@@ -18,4 +18,4 @@ jobs:
           version: latest
           run_install: false
       - run: pnpm install
-      - run: turbo build
+      - run: pnpm build
