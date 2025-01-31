@@ -11,6 +11,7 @@ import { VotingStage } from './pages/VotingStage';
 import { ResultsPage } from './pages/ResultsPage';
 import { LeaderBoard } from './pages/LeaderBoard';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { CSSPrioritize } from './components/StyledEngineProvider';
 
 const router = createBrowserRouter([
   {
@@ -52,5 +53,9 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CSSPrioritize>
+      <RouterProvider router={router} />
+    </CSSPrioritize>
+  );
 }

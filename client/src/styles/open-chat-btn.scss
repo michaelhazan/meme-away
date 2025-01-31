@@ -1,6 +1,6 @@
 .open-chat-btn {
-  width: 20vw;
-  height: auto;
+  width: 12vw;
+  height: 12vh;
   position: absolute;
   bottom: 3%;
   left: 5%;
@@ -9,7 +9,7 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .dialog-head {
