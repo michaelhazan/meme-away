@@ -4,6 +4,7 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
       - run: pnpm install
       - run: pnpm format:check
@@ -11,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
+        with:
+          version: latest
+          run_install: false
       - run: pnpm install
       - run: turbo build
