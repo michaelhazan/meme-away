@@ -4,10 +4,13 @@
   "description": "",
   "scripts": {
     "lint": "eslint .",
-    "format": "prettier --write . & eslint . --fix"
+    "format:write": "prettier --write . & eslint . --fix",
+    "format:check": "prettier --check . & eslint .",
+    "knip": "knip",
+    "build": "turbo run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michael Hazan, RivkaYo, RamAvni",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
@@ -15,24 +18,32 @@
     "@eslint/js": "^9.19.0",
     "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-nestjs-pedantic": "^0.0.11",
+    "eslint-plugin-nitpick": "^0.12.0",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
+    "knip": "^5.43.6",
     "lint-staged": "^15.4.3",
     "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
     "turbo": "^2.4.0",
     "typescript-eslint": "^8.22.0"
   },
   "dependencies": {
     "commitizen": "^4.3.1",
+    "cspell": "^8.17.3",
     "cz-conventional-changelog": "^3.3.0"
   },
   "lint-staged": {
-    "**/*.{js,ts,tsx}": [
-      "eslint --fix"
+    "**/*": [
+      "prettier --check",
+      "eslint"
     ],
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*(x)": [
+      "knip"
+    ]
   },
   "config": {
     "commitizen": {
