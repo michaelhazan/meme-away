@@ -30,7 +30,10 @@ export const OpenChatBtn = () => {
     <CSSPrioritize>
       <>
         <div className="open-chat-btn">
-          <MessageRoundedIcon onClick={() => setOpen(true)} />
+          <MessageRoundedIcon
+            className="chat-icon"
+            onClick={() => setOpen(true)}
+          />
         </div>
         <Dialog open={open} onClose={() => setOpen(false)}>
           <DialogTitle>Room name Chat</DialogTitle>
