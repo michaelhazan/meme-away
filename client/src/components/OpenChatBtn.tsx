@@ -5,23 +5,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import MessageRoundedIcon from '@mui/icons-material/MessageRounded';
-import { StyledEngineProvider } from '@mui/material/styles';
 import '../styles/open-chat-btn.scss';
-
-/**
- * A provider that ensures that MUI's styling is overridden by custom CSS,
- * removing the need for `!important`.
- *
- * We highly recommend that you wrap your app with this provider,
- * to allow an easy override experience for both this package and MUI.
- *
- * @see further docs [here](https://hilma.atlassian.net/wiki/spaces/TD/pages/627998839/Forms+API+-+Generic+Components)
- */
-const CSSPrioritize: React.FC<{ children?: React.ReactNode }> = ({
-  children,
-}) => {
-  return <StyledEngineProvider injectFirst>{children}</StyledEngineProvider>;
-};
 
 export const OpenChatBtn = () => {
   const [open, setOpen] = useState(false);
