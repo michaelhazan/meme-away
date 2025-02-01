@@ -8,6 +8,7 @@ import { GameRoom } from './pages/GameRoom';
 import { LeaderBoard } from './pages/LeaderBoard';
 import { MemeCreation } from './pages/MemeCreation';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { CSSPrioritize } from './components/StyledEngineProvider';
 import { NotMobile } from './pages/NotMobile';
 import { ResultsPage } from './pages/ResultsPage';
 import { VotingStage } from './pages/VotingStage';
@@ -52,5 +53,9 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CSSPrioritize>
+      <RouterProvider router={router} />
+    </CSSPrioritize>
+  );
 }
