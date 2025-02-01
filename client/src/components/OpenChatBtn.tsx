@@ -27,24 +27,22 @@ export const OpenChatBtn = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <CSSPrioritize>
-      <>
-        <div className="open-chat-btn">
-          <MessageRoundedIcon
-            className="chat-icon"
-            onClick={() => setOpen(true)}
-          />
-        </div>
-        <Dialog open={open} onClose={() => setOpen(false)}>
-          <DialogTitle>Room name Chat</DialogTitle>
-          <DialogContent>
-            here will be a list of the messages sent so far
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={() => setOpen(false)}>Close</Button>
-          </DialogActions>
-        </Dialog>
-      </>
-    </CSSPrioritize>
+    <>
+      <div className="open-chat-btn">
+        <MessageRoundedIcon
+          className="chat-icon"
+          onClick={() => setOpen(true)}
+        />
+      </div>
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <DialogTitle>Room name Chat</DialogTitle>
+        <DialogContent>
+          here will be a list of the messages sent so far
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>Close</Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 };
