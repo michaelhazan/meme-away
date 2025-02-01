@@ -1,31 +1,19 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
-import { CreateRoom } from '../components/CreateRoom';
-import { JoinRoom } from '../components/JoinRoom';
-
-enum EntranceEnum {
-  JOIN = 'join',
-  CREATE = 'create',
-}
+import { TextField } from '@mui/material';
 
 export const EnterGame: FC = () => {
-  const [entrance, setEntrance] = useState<EntranceEnum>(EntranceEnum.JOIN);
-
-  function handleChangeEntrance() {
-    if (entrance === EntranceEnum.JOIN) {
-      setEntrance(EntranceEnum.CREATE);
-    } else {
-      setEntrance(EntranceEnum.JOIN);
-    }
-  }
-
   return (
     <div>
-      {entrance === EntranceEnum.JOIN ? (
-        <JoinRoom handleChangeEntrance={handleChangeEntrance} />
-      ) : (
-        <CreateRoom handleChangeEntrance={handleChangeEntrance} />
-      )}
+      <h1>Enter Game</h1>
+      <TextField label="Enter Name" variant="outlined" />
+      <TextField label="Enter Room Code" variant="outlined" />
+      <button onClick={() => console.log('Create room has been pressed')}>
+        Create Room!
+      </button>
+      <button onClick={() => console.log('Join room has been pressed')}>
+        Join Room!
+      </button>
     </div>
   );
 };
