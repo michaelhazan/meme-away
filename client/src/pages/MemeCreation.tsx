@@ -1,3 +1,3 @@
 export const MemeCreation = () => {
-  return <div>mame creation</div>;
+  return <div>meme creation</div>;
 };

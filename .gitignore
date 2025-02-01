@@ -1,4 +1,4 @@
-# Trubo
+# Turbo
 .turbo
 
 # OS
@@ -33,12 +33,6 @@
 # temp directory
 .temp
 .tmp
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

@@ -1,15 +1,17 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { isMobile } from 'react-device-detect';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from './components/Layout';
-import { NotMobile } from './pages/NotMobile';
 import { EnterGame } from './pages/EnterGame';
+import { EnterUsername } from './pages/EnterUsername';
 import { GameRoom } from './pages/GameRoom';
-import { MemeCreation } from './pages/MemeCreation';
-import { VotingStage } from './pages/VotingStage';
-import { ResultsPage } from './pages/ResultsPage';
 import { LeaderBoard } from './pages/LeaderBoard';
+import { MemeCreation } from './pages/MemeCreation';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { CSSPrioritize } from './components/StyledEngineProvider';
+import { NotMobile } from './pages/NotMobile';
+import { ResultsPage } from './pages/ResultsPage';
+import { VotingStage } from './pages/VotingStage';
 
 const router = createBrowserRouter([
   {
@@ -44,5 +46,9 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CSSPrioritize>
+      <RouterProvider router={router} />
+    </CSSPrioritize>
+  );
 }

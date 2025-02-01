@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .header-text {
+    flex-direction: column;
+    text-align: center;
+
+    .room-name {
+      font-size: 2rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .header-image {
+    width: 15vw;
+    height: 7vh;
+    overflow: hidden;
+  }
+}
