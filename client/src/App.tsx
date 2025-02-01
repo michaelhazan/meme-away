@@ -3,7 +3,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from './components/Layout';
 import { EnterGame } from './pages/EnterGame';
-import { EnterUsername } from './pages/EnterUsername';
 import { GameRoom } from './pages/GameRoom';
 import { LeaderBoard } from './pages/LeaderBoard';
 import { MemeCreation } from './pages/MemeCreation';
