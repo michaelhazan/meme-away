@@ -3,7 +3,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from './components/Layout';
 import { EnterGame } from './pages/EnterGame';
-import { EnterUsername } from './pages/EnterUsername';
 import { GameRoom } from './pages/GameRoom';
 import { LeaderBoard } from './pages/LeaderBoard';
 import { MemeCreation } from './pages/MemeCreation';
@@ -15,31 +14,24 @@ import { VotingStage } from './pages/VotingStage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
     element: <Layout />,
     children: [
       ...(isMobile
         ? [
             {
-              path: 'enter-username',
-              element: <EnterUsername />,
+              path: '/',
+              element: <EnterGame />,
             },
             {
-              path: 'enter-game',
-              element: <EnterGame />,
+              path: 'game/:roomId',
+              element: <GameRoom />,
               children: [
-                {
-                  path: 'game/:roomId',
-                  element: <GameRoom />,
-                  children: [
-                    { path: 'create', element: <MemeCreation /> },
-                    { path: 'vote', element: <VotingStage /> },
-                    { path: 'results', element: <ResultsPage /> },
-                  ],
-                },
-                { path: 'leaderboard', element: <LeaderBoard /> },
+                { path: 'create', element: <MemeCreation /> },
+                { path: 'vote', element: <VotingStage /> },
+                { path: 'results', element: <ResultsPage /> },
               ],
             },
+            { path: 'leaderboard', element: <LeaderBoard /> },
           ]
         : [
             {
